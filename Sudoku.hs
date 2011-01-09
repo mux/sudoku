@@ -29,5 +29,4 @@ solve g = let (empty,filled) = partition ((==0) . snd) (gridNodes g)
                                  solve' ns (M.insert n c colors)
         solve' []     colors = return colors
 
-        choose colors n = [1..9] \\ mapMaybe (`M.lookup` colors)
-                                                    (neighbors n)
+        choose colors n = [1..9] \\ mapMaybe (`M.lookup` colors) (neighbors n)
